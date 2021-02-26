@@ -20,7 +20,7 @@ file = File.new("data/4.txt",  "r:UTF-8")
 lines = file.readlines
 total = 0
 
-for i in 0..2
+for i in 0..lines.length() - 1
     p = lines[i].split("x")
     p.map!(&:to_i)
     a, b, c = p[0], p[1], p[2]
