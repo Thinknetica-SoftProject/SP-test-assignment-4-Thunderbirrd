@@ -16,3 +16,20 @@
 #
 ## Решение:
 
+require 'digest'
+inp = gets.chomp
+number = 1
+hash = Digest::MD5.new
+
+while true
+    hash.reset
+    h = inp + number.to_s
+    hash.update h
+    d = hash.hexdigest
+    if d.start_with?("00000")
+        puts number
+        break
+    end
+    number += 1
+end
+

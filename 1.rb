@@ -16,6 +16,11 @@
 #
 ## Решение:
 
+a = File.read("data/1.txt")
+op = a.count("(")
+cl = a.count(")")
+puts op - cl
+
 
 
 

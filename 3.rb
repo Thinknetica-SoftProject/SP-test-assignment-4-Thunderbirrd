@@ -10,4 +10,17 @@
 #
 ## Решение:
 
+file = File.new("data/3.txt",  "r:UTF-8")
+lines = file.readlines
+maxes = 0
+for i in 0..lines.length() - 1
+    l = lines[i].split(" ")
+    l.map!(&:to_i)
+    max = l.max
+    min = l.min
+    maxes += max - min
+end
+
+puts maxes
+
 

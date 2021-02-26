@@ -16,4 +16,28 @@
 #
 ## Решение:
 
+file = File.new("data/4.txt",  "r:UTF-8")
+lines = file.readlines
+total = 0
+
+for i in 0..2
+    p = lines[i].split("x")
+    p.map!(&:to_i)
+    a, b, c = p[0], p[1], p[2]
+    shv = a * b
+    shd = a * c
+    dv = b * c
+    curr = 2 * shv + 2 * shd + 2 * dv
+    if shv <= shd and shv <= dv
+        curr += shv
+    elsif shd <= shv and shd <= dv
+        curr += shd
+    else
+        curr += dv
+    end
+    total += curr
+end
+
+puts total
+
 
